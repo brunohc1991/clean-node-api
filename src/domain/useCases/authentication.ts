@@ -4,5 +4,5 @@ export interface AuthenticationModel {
 }
 
 export interface Authentication {
-  auth: (authenticationModel: AuthenticationModel) => Promise<string | null>
+  auth: (authenticationModel: AuthenticationModel) => Promise<String | null>
 }

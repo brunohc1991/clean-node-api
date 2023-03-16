@@ -18,11 +18,14 @@ export class DbAuthentication implements Authentication {
     this.tokenGenerator = tokenGenarator
   }
 
-  async auth (authentication: AuthenticationModel): Promise<string | null> {
+  async auth (authentication: AuthenticationModel): Promise<String | null> {
     const account = await this.loadAccountByEmailRepository.load(authentication.email)
     if (account != null) {
-      await this.hashCompare.compare(authentication.password, account.password)
-      await this.tokenGenerator.generate(account.id)
+      const isValidPasswd = await this.hashCompare.compare(authentication.password, account.password)
+      if (isValidPasswd) {
+        const accessToken = await this.tokenGenerator.generate(account.id)
+        return accessToken
+      }
     }
     return null
   }

@@ -5,7 +5,8 @@
         "target": "es2019",
         "strictNullChecks": true,
         "esModuleInterop": true,
-        "sourceMap": false
+        "sourceMap": false,
+        "rootDir": "src"
     },
     "include": [
         "src"

@@ -1,3 +1,4 @@
+import { badRequest } from '../../../helpers/http/http-helper'
 import { unauthorized } from '../../../helpers/http/http-helper'
 import { Controller, HttpRequest, HttpResponse, Validation } from './add-survey-controller-protocols'
 
@@ -7,7 +8,10 @@ export class AddSurveyController implements Controller {
   ) {}
 
   async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
-    await this.validation.validate(httpRequest.body)
+    const validate = await this.validation.validate(httpRequest.body)
+    if (validate) {
+      return badRequest(validate)
+    }
     return unauthorized()
   }
 }

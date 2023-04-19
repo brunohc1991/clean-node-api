@@ -19,7 +19,7 @@ describe('Survey Routes', () => {
     await MongoHelper.disconnect
   })
   describe('POST /survey', () => {
-    test('Should return 204 on survey', async () => {
+    test('Should return 403 on survey withou accessToken', async () => {
       await request(app)
         .post('/api/surveys')
         .send({
@@ -32,7 +32,7 @@ describe('Survey Routes', () => {
             answer: 'answer2'
           }]
         })
-        .expect(204)
+        .expect(403)
     })
   })
 })

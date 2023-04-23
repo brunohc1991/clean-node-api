@@ -41,7 +41,7 @@ const makeAccountData = (): AddAccountModel => ({
   password: 'valid_password'
 })
 
-interface SutTypes {
+type SutTypes = {
   sut: DbAddAccount
   encryptStub: Hasher
   addAccountRepositoryStub: AddAccountRepository

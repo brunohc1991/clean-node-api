@@ -5,7 +5,7 @@ import { LoginController } from './login-controller'
 import { Validation } from '../signup/signup-controller-protocols'
 
 describe('Login Controller', () => {
-  interface sutTypes {
+  type sutTypes = {
     sut: LoginController
     authenticationStub: Authentication
     validationStub: Validation

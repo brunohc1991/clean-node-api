@@ -4,7 +4,7 @@ import { AuthMiddleware } from './auth-middleware'
 import { AccountModel, LoadAccountByToken, HttpRequest } from './auth-middlewares-protocols'
 
 describe('Auth Middleware', () => {
-  interface SutTypes {
+  type SutTypes = {
     sut: AuthMiddleware
     loadAccountByTokenStub: LoadAccountByToken
   }

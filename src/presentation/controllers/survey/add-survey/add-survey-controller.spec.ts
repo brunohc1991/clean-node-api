@@ -12,7 +12,7 @@ describe('AddSurvey Controller', () => {
     MockDate.reset()
   })
 
-  interface sutTypes {
+  type sutTypes = {
     sut: AddSurveyController
     validationStub: Validation
     addSurveyStub: AddSurvey

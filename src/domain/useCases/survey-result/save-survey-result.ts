@@ -1,7 +1,7 @@
 import { SurveyResultModel } from '../../models/survey-result'
 
-export type SaveSurveyResultModel = Omit<SurveyResultModel, 'id'>
+export type SaveSurveyResultParams = Omit<SurveyResultModel, 'id'>
 
 export type SaveSurveyResult = {
-  save: (data: SaveSurveyResultModel) => Promise<SurveyResultModel | null>
+  save: (data: SaveSurveyResultParams) => Promise<SurveyResultModel | null>
 }

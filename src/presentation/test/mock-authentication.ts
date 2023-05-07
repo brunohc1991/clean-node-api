@@ -3,7 +3,7 @@ import { Authentication, AuthenticationParams } from '@/domain/useCases/account/
 export const mockAuthentication = (): Authentication => {
   class AuthenticationStub implements Authentication {
     async auth (authentication: AuthenticationParams): Promise<string | null> {
-      return await new Promise(resolve => resolve('any_token'))
+      return await Promise.resolve('any_token')
     }
   }
   return new AuthenticationStub()
